@@ -16,19 +16,19 @@ public class LinkedListTest {
     }
 
     @Test
-    public void provideThreeNumber_WhenAddedToTop_ShouldTestCasePassed() {
-        Node<Integer> firstNode = new Node<>(30);
-        Node<Integer> secondNode = new Node<>(56);
+    public void provideThreeNumber_WhenAddedToStart_ShouldReturnTrue() {
+        Node<Integer> firstNode = new Node<>(56);
+        Node<Integer> secondNode = new Node<>(30);
         Node<Integer> thirdNode = new Node<>(70);
         NewLinkedList myCreatedLinkList = new NewLinkedList();
-        myCreatedLinkList.addAtLast(firstNode);
-        myCreatedLinkList.addAtLast(secondNode);
-        myCreatedLinkList.addAtLast(thirdNode);
+        myCreatedLinkList.addAtStart(firstNode);
+        myCreatedLinkList.addAtStart(secondNode);
+        myCreatedLinkList.addAtStart(thirdNode);
 
 
-        boolean isLinkedListCreated = myCreatedLinkList.start.equals(thirdNode) &&
+        boolean isLinkedListCreated = myCreatedLinkList.start.equals(firstNode) &&
                 myCreatedLinkList.start.getNext().equals(secondNode) &&
-                myCreatedLinkList.last.equals(firstNode);
+                myCreatedLinkList.last.equals(thirdNode);
         Assert.assertTrue(isLinkedListCreated);
     }
 }
